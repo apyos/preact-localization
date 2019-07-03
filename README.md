@@ -122,3 +122,7 @@ Taking `<Text id="news.totalStories" ..>` from our example:
 - `<.. plural={3} fields={{ count: 3 }}>` renders `3 articles`
 
 In addition to [`<Text>`](#Text), [`<Localizer>`](#Localizer) provides a ways to translate more than just display text - HTML attributes, component props, arbitrary Strings, etc.
+
+## License
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fapyos%2Fpreact-localization.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fapyos%2Fpreact-localization?ref=badge_large)
