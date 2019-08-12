@@ -12,7 +12,7 @@ Features include:
 
 - Tiny: less than 850kb gzipped
 - Supports pluralization of strings
-- Supports template `{{fields}}` in definition values
+- Supports template `{{fields}}` in dictionary values
 - Good test coverage
 
 There are also a few other differences:
@@ -38,7 +38,7 @@ npm install --save preact-localization
 
 ## Getting Started
 
-1. Create a definition. Typically JSON files, we'll call ours `fr.json`:
+1. Create a dictionary. Typically JSON files, we'll call ours `fr.json`:
 
 ```json
 {
@@ -53,14 +53,14 @@ npm install --save preact-localization
 }
 ```
 
-2. Expose the definition to your whole app via `<IntlProvider>`:
+2. Expose the dictionary to your whole app via `<IntlProvider>`:
 
 ```js
 import { IntlProvider } from 'preact-localization'
-import definition from './fr.json'
+import dictionary from './fr.json'
 
 render(
-  <IntlProvider definition={definition}>
+  <IntlProvider dictionary={dictionary}>
     <App />
   </IntlProvider>
 )
@@ -96,17 +96,17 @@ That's it!
 
 ### Fallback Text
 
-Rendering our example app with an empty definition _(or without the Provider)_ will attempt to use any text contained within `<Text>..</Text>` as fallback text.
+Rendering our example app with an empty dictionary _(or without the Provider)_ will attempt to use any text contained within `<Text>..</Text>` as fallback text.
 
-In our example, this would mean rendering without a definition for `news.title` would produce `<h1>World News</h1>`.
+In our example, this would mean rendering without a dictionary for `news.title` would produce `<h1>World News</h1>`.
 
-If we provide a definition that has a `title` key inside a `news` object, that value will be rendered instead.
+If we provide a dictionary that has a `title` key inside a `news` object, that value will be rendered instead.
 
 ### Pluralization and Templating
 
-In our example, `<footer>` is using `<Text>` as a convenient way to do pluralization and templating. In our definition, `news.totalStories` is an Object with pluralization keys. The values in that object will be selected based on an integer `plural` prop passed to `<Text>`.
+In our example, `<footer>` is using `<Text>` as a convenient way to do pluralization and templating. In our dictionary, `news.totalStories` is an Object with pluralization keys. The values in that object will be selected based on an integer `plural` prop passed to `<Text>`.
 
-Any definition value _(including pluralization values)_ can contain `{{field}}` placeholders. These placeholders get replaced with matched keys in an object passed as the `fields` prop. In our example, the "many" plural form is such a template - it will render `"5 articles"` when `fields={{ count: 5 }}`.
+Any dictionary value _(including pluralization values)_ can contain `{{field}}` placeholders. These placeholders get replaced with matched keys in an object passed as the `fields` prop. In our example, the "many" plural form is such a template - it will render `"5 articles"` when `fields={{ count: 5 }}`.
 
 The available forms for specifying pluralization values are as follows:
 
