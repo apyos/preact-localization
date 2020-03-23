@@ -37,7 +37,6 @@
     "microbundle": "^0.11.0",
     "preact": "^10.0.0-beta.3",
     "prettier": "^1.18.2",
-    "rimraf": "^2.6.3",
     "webpack": "^4.35.2"
   },
   "peerDependencies": {
